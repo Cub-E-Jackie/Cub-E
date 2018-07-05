@@ -13,6 +13,8 @@ public class SpielUeberwachung : MonoBehaviour {
 //globale Variable zur Speicherung der Anzahl Leben, Initialisieren auf 5
 // globale Variable zur Speicherung der Spielzeit auf 0
 
+//globale Variable public gameobject UI_Lebensbalken, jetzt zugriff im skript möglich
+
 	// Use this for initialization
 	void Start () {
 	
@@ -46,6 +48,10 @@ public class SpielUeberwachung : MonoBehaviour {
 	
 	void AnzahlLeben (float leben){
 	
+	//Teil des UI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
+	//Zugriff auf UI
+	
 	//GameObjekt Leben als kleinen Würfel erstellen, so oft wie leben Variable
 	
 	// globale Variable!!! zur Speicherung der Leben, leben - oder + 1
@@ -67,6 +73,8 @@ public class SpielUeberwachung : MonoBehaviour {
 	// Anschließend Aufruf von SpielStart()
 	
 	// Messen der Spielzeit, speichern der Zeit in fester und globaler Variable
+	
+	//deaktivieren der verschiedenen Canvas objekte!!! zur Verwaltung von den verschiedenen Menü-Variationen!!!
 	
 	}
 }
