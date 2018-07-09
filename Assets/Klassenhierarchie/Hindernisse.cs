@@ -4,16 +4,16 @@ using UnityEngine;
 
 /*
    In dieser Klasse soll alles rund um die Hindernisse im Level programmiert werden.
-   Es gibt verschiedene Arten von Hindernissen in unterschiedlichen Formen, bestehend aus kleinen Modulationen.
-   Die Hindernisse werden zufällig  im Level auf der akutellen Spielfläche generiert.
-   Dabei wird das Spielfeld jedes Mal nach dem Aufruf der Funktion Rotation in der Klasse CubeSteuerung neu generiert.
-   
-   Spielvariante A: Die Figur bewegt sich in Richtung des Flusses, sprich auf die Hindernisse zu.
-   
-   Spielbariante B: Die Hindernisse bewegen sich auf die Spielfigur zu. 
+   - es werden verschiedene Arten von Hindernissen in unterschiedlichen Formen, bestehend aus kleinen Modulationen erzeugt
+   - Hindernisse werden zufällig  im Level auf der akutellen Spielfläche generiert und platziert
+   - das Spielfeld wird jedes Mal nach dem Aufruf den Funktion RotationHorizontal() oder RotationVertikal() in der Klasse CubeSteuerung neu generiert
+   - Hindernisse bewegen sich auf die Spielfigur zu
 */
 
 public class Hindernisse : MonoBehaviour {
+
+	//eventuelle Array Organisation für die zeitgleiche Steuerung der Hindernisse notwendig!!!
+
 
 	// Skript startet ab dem Beginn des Levels. 
 	
@@ -53,52 +53,50 @@ public class Hindernisse : MonoBehaviour {
 	//Speicherung und Zuweisung des Objekts in Form des vormodellierten Schiffchens
 	
 	}
+		
 	
-	/*___________________________________________Variante B__________________________________________________*/
+	void FeldGenerieren() {
 	
+	// Initialisieren der Variable KoordinatenLaenge
 	
-	void FeldGenerierenB() {
+	// Initialisieren der Variable KoordinatenBreite
 	
-	// zufällige Auswahl der Objektart des Hindernisses
+	// Initialisieren der Variable objektArt mit Zufallszahlen zwischen 0 und 3 (4 Optionen!)
 	
-	// zufällige Positionierung des Objektes zu Beginn der Erzeugung und Generierung
+	// zufällige Auswahl der Objektart des Hindernisses mit SwitchCase
+	
+		// wenn objektArt == 0,
+			//dann Baumstamm()
+			
+		// wenn objektArt == 1,
+			//dann Ball()
+			
+		// wenn objektArt == 2,
+			//dann QuietscheEnte()
+			
+		// wenn objektArt == 3,
+			//dann Schiffchen()
+	
+	// zufällige Positionierung des Objektes in dem Feld zwischen 0 und KoordinatenBreite 
+	
+	// zufällige Positionierung des Objekts in dem Feld zwischen 0 und KoordinatenLaenge
+	
+	// Speicherung der aktuellen Objektposition für Kollision() in der Klasse SpielUeberwachung
+	
+	// Aufruf der Funktion Bewegung(hindernis)
 	
 	}
 	
 	// Beschreibung der Bewegung der Hindernisse
 	
-	void BewegungB (/* GameObject hindernis */) {
+	void Bewegung (/* GameObject hindernis */) {
 	
 	// Start der Bewegung 
 	
 	// Bewegung des Hindernisses auf Spielfigur zu (z-Achse)
 	
-	// Definition der Geschwindigeit
-	
-	// Definition des Endpunktes der Bewegung, sprich bei Kollision mit Spielfigur und/Oder Ende des Spielfeldes	
-	
-	}
-	
-	/*___________________________________________Variante A_____________________________________________________*/
-	
-	void FeldGenerierenA() {
-	
-	// zufällige Auswahl der Objektart des Hindernisses
-	
-	// zufällige Positionierung des Objektes zu Beginn der Erzeugung und Generierung
-	
-	}
-	
-	// Beschreibung der Bewegung der Hindernisse, hier aber nicht auf Spielfigur zu sondern horizontale Bewegung auf Spielfeld
-	
-	void BewegungA (/* GameObject hindernis */) {
-	
-	// Start der Bewegung des Hindernisses in einem begrenztem Bereich!!!
-	
-	//Richtungswechsel, nach einer zufälligen Position
-	
-	// Definition der Geschwindigeit
-	
+	// Definition der Geschwindigkeit
+
 	
 	}
 	
@@ -106,8 +104,10 @@ public class Hindernisse : MonoBehaviour {
 	
 	void Update () {
 	
-	//Aufruf der Funktion FeldGenerieren() sobald Aufruf Funktion rotation in Klasse CubeSteuerung
+	// Aufruf der Funktion FeldGenerieren() sobald Aufruf Funktion RotationHorizontal() oder RotationVertikal() in Klasse CubeSteuerung
 	
-	//bei beiden Varianten! Aufruf der Funktion Bewegung (GameObject hindernis) um Hindernis zu bewegen
+	// solange Aufruf der Funktion Bewegung(GameObject hindernis) aller Hindernisse um Hindernisse zu bewegen, bis Kollision() in SpielUeberwachung oder Spielmodus auf false
+		//dies eventuell in der Funktion Bewegung
+	
 	}
 }

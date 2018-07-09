@@ -4,7 +4,9 @@ using UnityEngine;
 
 /*
   In dieser Klasse wird die Steuerung des Spiels definiert und verwaltet.
-  Dabei geht es vor allem um die Steuerung WÄHREND des Levels.
+  - die Steuerung WÄHREND des Levels
+  - die Steuerung des Spielers in horizontaler Richtung, nach links und rechts
+  - abhängig von Spielmodus
   
   Sowohl bei Spielvariante A, als auch bei B: Steurung der Spielfigur nach links oder rechts.
 */
@@ -17,28 +19,31 @@ public class SpielerInput : MonoBehaviour {
 	
 	//Spieler als Objekt mit vormodelierter Form generieren
 	
-	//Spieler bei Start des Levels auf Position bringen
-		
+	//Positionierung des Spielers im Feld
+	
+	//Speicherung der Position des Spielers in Variablen
+	
 	}
 	
 	void BewegungSpieler (float richtungSpieler){
 	
-	//translation des Spieler Objekts um die floatzahl die übergeben wurde
+	//translation des Spieler Objekts um die float zahl die übergeben wurde
 	
-	//Stop Punkt wenn die Bewegung von der Spielfläche weg gehen würde und/Oder es eine Kollion mit einem Hinderniss entstehen würde
+	// Bewegung stoppen, wenn Grenze des Felds erreicht oder Kollision() in SpielUeberwachung aufgerufen wird
 	
 	
 	}
 	
-	// Update is called once per frame
 	
 	void Update () {
 	
-	//Spieler bei Aufruf der Funktion rotation der Klasse CubeSteuerung neu positionieren
+	//Spieler bei Aufruf der gesamten Klasse nochmal neu, ab Start()
 	
-	//Spieler bei Tastenbedienung A Aufruf der Funktion BewegungSpieler(negative floatzahl)
+	// Solange Spielmodus auf true
 	
-	//Spieler bei Tastenbedienung D Aufruf der Funktion BewegungSpieler(positive floatzahl)
+		//Spieler bei Tastenbedienung A Aufruf der Funktion BewegungSpieler(negative floatzahl)
+	
+		//Spieler bei Tastenbedienung D Aufruf der Funktion BewegungSpieler(positive floatzahl)
 	
 	
 	}
