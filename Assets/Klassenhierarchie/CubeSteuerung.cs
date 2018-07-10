@@ -18,7 +18,7 @@ public class CubeSteuerung : MonoBehaviour {
 	
 	void Start () {
 	
-		//Erzeugung des Cube
+		//Erzeugung des Cube, nicht per Code erzeugen, also als primitiver Körper in Unity
 		
 		//Hinzufügen der Wasseroberfläche
 		
@@ -32,7 +32,7 @@ public class CubeSteuerung : MonoBehaviour {
 		
 		// Initialisieren von drehrichtung mit Zufallszahlen zwischen und einschließlich 0 und 3 (vier Möglichkeiten!)
 		
-		// Zurücklaufen der Zeit auf 0 initialisieren
+		// Zurücklaufen der Zeit auf 0 initialisieren -> in die Update Methode!!!
 		
 		
 		// wenn rotationszeit == 0,

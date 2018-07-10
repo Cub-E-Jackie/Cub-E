@@ -12,6 +12,15 @@ using UnityEngine;
 
 public class Hindernisse : MonoBehaviour {
 
+	//globale Variable GameObject hindernis
+	
+	// publice void lifetime = 10f;
+	
+	// private float = 0
+
+	
+	private float timeCounter;
+
 	//eventuelle Array Organisation für die zeitgleiche Steuerung der Hindernisse notwendig!!!
 
 
@@ -23,9 +32,14 @@ public class Hindernisse : MonoBehaviour {
 			
 	}
 	
+	void 
+	
 	void Baumstamm (){
 	
 	// Erzeugung eines GameObjekts 
+	
+	// Vector3 startPoint = new Vector3(Random.Range(-5f, 5), 10f, Random.Range(-5f, 5f));
+	// Instantiate(hindernis, startPoint, Quaternion.identity);
 
 	//Speicherung und Zuweisung des Objekts in Form des vormodellierten Baums
 	
@@ -102,7 +116,26 @@ public class Hindernisse : MonoBehaviour {
 	
 	// Update is called once per frame
 	
+
 	void Update () {
+	
+	/*
+		
+	timer += Time.deltaTime;
+	
+	if (timer > lifetime){
+	
+	Destroy(this.GameObject);
+	
+	}
+	*/
+	
+	// timeCounter += Time.deltaTime;
+	
+	// wenn timeCounter > 1f)
+		// dann timeCounter = 0f;
+		// ErzeugeHindernis();
+		
 	
 	// Aufruf der Funktion FeldGenerieren() sobald Aufruf Funktion RotationHorizontal() oder RotationVertikal() in Klasse CubeSteuerung
 	
