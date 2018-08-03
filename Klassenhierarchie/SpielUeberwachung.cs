@@ -18,6 +18,7 @@ public class SpielUeberwachung : MonoBehaviour {
 	// globale Variable zur Speicherung des Fortschritts (int) -> public für Klassen UIverwaltung, SpielerInput
 	// globale Variable zur Speicherung der Spielzeit(float) -> public für Klasse UIverwaltung
 	// globale Variable zur Verwaltung des Spielmodus (bool)-> public für Klassen UIverwaltung, SpielerInput, CameraSteuerung, Hindernisse, CubeSteuerung
+	static public bool aktivModus;
 
 	// Start der Klasse ab Beginn des Programms, dies ist die erste Klasse!!!
 	void Start () {

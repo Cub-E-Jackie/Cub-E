@@ -48,7 +48,7 @@ public class CameraSteuerung : MonoBehaviour {
 	//Kamera Blick verbinden mit Spieler nicht durch follow und parented sondern durch LookAt, oder in Update()-Funktion???
 	
 	//		Kamera schaut immer zum Spieler das ist der erste Schritt
-			transform.LookAt(target.transform.position);
+			//transform.LookAt(target.transform.position); //Hilfe von Patti
 	
 	//Kamera bewegt sich nach links und rechts hinter dem Spieler her
 	
@@ -64,7 +64,7 @@ public class CameraSteuerung : MonoBehaviour {
 	
 	
 	// Camera wieder in Feld und wieder Levelsicht
-	void CameraZoom(){
+	void CameraVor(){
 	
 	
 	// setzen von aktivModus auf true

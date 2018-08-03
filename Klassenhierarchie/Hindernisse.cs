@@ -22,7 +22,7 @@ public class Hindernisse : MonoBehaviour {
 	// globale Variable zur Speicherung des akutell zuletzt erzeugten Hindernisses
 	public GameObject aktuellesHinderniss;
 	
-    private float timeCounterErzeugung = /*Zeit nach der wieder ein neues Objekt erzeugt werden soll*/;
+    private float timeCounterErzeugung = 120f/*Zeit nach der wieder ein neues Objekt erzeugt werden soll*/;
 	
 	// Variable für die zufällige Auswahl einer Art des neuen Objektes
 	private int objektArt;
@@ -54,8 +54,8 @@ public class Hindernisse : MonoBehaviour {
 				//dann Schiffchen()
 				
 		//Positionsvektor nach Pattmann zur Positionierung des Objekts
-        Vector3 startPoint = new Vector3(Random.Range(-5f, 5), 10f, Random.Range(-5f, 5f));
-        Instantiate(hindernis, startPoint, Quaternion.identity);
+        //Vector3 startPoint = new Vector3(Random.Range(-5f, 5), 10f, Random.Range(-5f, 5f));
+        //Instantiate(hindernis, startPoint, Quaternion.identity);
     } 
 	 
 	
@@ -100,6 +100,8 @@ public class Hindernisse : MonoBehaviour {
 	void Feldwechsel() {
 		
 		// Funktion entfällt!!!
+		
+		// Funktionsaufruf von CameraVor() in Klasse CameraSteuerung
 	}
 	
 	

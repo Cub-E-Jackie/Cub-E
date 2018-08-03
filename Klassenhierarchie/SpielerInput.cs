@@ -19,18 +19,10 @@ public class SpielerInput : MonoBehaviour {
 	//Spieler als Objekt mit vormodelierter Form generieren
 	
 	//Positionierung des Spielers im Feld
+	this.transform.position = new Vector3(4.5f, 6f, 0);		
+	}
+	
 		
-	}
-	
-	void BewegungSpieler (float richtungSpieler){
-	
-	//translation des Spieler Objekts um die float zahl die übergeben wurde
-	
-	// Bewegung stoppen, wenn Grenze des Felds erreicht
-	
-	
-	}
-	
 	// Hier kommt der Trigger und Collider Teil zum realisieren der Kollisionen und zum abfangen der Ereignisse!
     void OnTriggerEnter(Collider other)
     {
@@ -61,13 +53,24 @@ public class SpielerInput : MonoBehaviour {
 	
 	
 	void Update () {
+	
+	float geschwindigkeit = 5f;
+	Vector3 schritt = new Vector3(0f, 0f, 10f);
 		
-	// Solange aktivModus auf true
-	
-		//Spieler bei Tastenbedienung A Aufruf der Funktion BewegungSpieler(negative floatzahl)
-	
-		//Spieler bei Tastenbedienung D Aufruf der Funktion BewegungSpieler(positive floatzahl)
-	
+		// Solange aktivModus auf true
+		//if (SpielUeberwachung.aktivModus){
+		
+			//Spieler bei Tastenbedienung A Aufruf der Funktion BewegungSpieler(negative floatzahl)
+			if( Input.GetKeyDown( KeyCode.A )){
+				this.transform.position -= schritt * geschwindigkeit * Time.deltaTime;
+			}
+		
+			//Spieler bei Tastenbedienung D Aufruf der Funktion BewegungSpieler(positive floatzahl)
+			if(  Input.GetKeyDown( KeyCode.D )){
+				this.transform.position += schritt * geschwindigkeit * Time.deltaTime;
+			}
+			
+		//}
 	
 	}
 }

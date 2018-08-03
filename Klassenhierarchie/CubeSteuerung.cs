@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Just a note for Unity C# users, you must specify "System.Random()" as Unity has a "UnityEngine.Random()" which clashes (note that "UnityEngine.Random()" doesn't have the ability to generate random numbers).
 
 /*
    In dieser Klasse wird alles rund um den Cube programmiert.
@@ -12,6 +13,7 @@ using UnityEngine;
 public class CubeSteuerung : MonoBehaviour {
 
 	// Variable drehrichtung (private, int)
+	private int drehrichtung;
 
 	// Beim Start des Programms soll der Cube sofort erzeugt werden und im Hintergrund sichtbar sein.
 	void Start () {
@@ -29,48 +31,74 @@ public class CubeSteuerung : MonoBehaviour {
 	*/
 	void CubeDrehen (){
 	 
-		
+		//Random zufall = new System.Random();
 		// Initialisieren von drehrichtung mit Zufallszahlen zwischen und einschließlich 0 und 3 (vier Möglichkeiten!)
-			
+		drehrichtung = Random.Range(0, 4);	
 		//Auswahl der Rotationsrichtung mit SwitchCase
-			
+		switch (drehrichtung){
+		
 			// wenn drehrichtung == 0, 
-				//dann RotationHorizontal(float richtung);
+					//dann RotationHorizontal(float richtung);
+			case 0: RotationHorizontal(90f);
+					break;
+				
 				
 			// wenn drehrichtung == 1, 
 				//dann RotationHorizontal(float - richtung);
+			case 1: RotationHorizontal ( -90f);
+					break;
 			
 			// wenn drehrichtung == 2, 
 				//dann RotationVertikal(float richtung);
-			
+			case 2: RotationVertikal (90);
+					break;
+					
 			// wenn drehrichtung == 3, 
 				//dann RotationVertikal(float - richtung);
+			case 3: RotationVertikal ( -90);
+					break;
+		}
 				
 	}
 	
 	//Rotationsbewegung nach oben oder unten programmieren
 	void RotationVertikal (float richtung){
 	
+		float geschwindigkeit = 100f;
+	
 		// globale Variable aktivModus auf false, zur Organisation von SpielerInput
+		SpielUeberwachung.aktivModus = false;
 	
 		// Cube dreht sich vertikal um x Achse um übergebenen Winkel 
+		transform.Rotate(new Vector3(richtung,0,0), geschwindigkeit);
 		
-		// Funktionsaufruf ErzeugeHindernis() der Klasse Hindernisse
+		//alternativ???
+		//transform.eulerAngles += new Vector3(0f, 0f, richtung);
+		
+		// Funktionsaufruf Feldwechsel() der Klasse Hindernisse
+		//geht noch nicht 	Hindernisse.Feldwechsel();
 		
 		// globale Variable aktivModus auf true, zur Organisation von SpielerInput
+		SpielUeberwachung.aktivModus = true;
 		
 	}
 	
 	//Rotationsbewegung nach links oder rechts programmieren
 	void RotationHorizontal (float richtung){
 	
-		// globale Variable aktivModus auf false, zur Organisation von SpielerInput
+		float geschwindigkeit = 100f;
 	
-		// Cube dreht sich horizontal um y Achse um übergebenen Winkel 
+		// globale Variable aktivModus auf false, zur Organisation von SpielerInput
+		SpielUeberwachung.aktivModus = false;
+	
+		// Cube dreht sich vertikal um y Achse um übergebenen Winkel 
+		transform.Rotate(new Vector3(0,richtung,0), geschwindigkeit);
 		
-		// Funktionsaufruf Feldgenerieren() der Klasse Hindernisse
+		// Funktionsaufruf Feldwechsel() der Klasse Hindernisse
+		// geht noch nicht 	Hindernisse.Feldwechsel();
 		
 		// globale Variable aktivModus auf true, zur Organisation von SpielerInput
+		SpielUeberwachung.aktivModus = true;
 		
 	}
 	
